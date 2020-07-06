@@ -20,4 +20,5 @@ setuptools.setup(
         "Operating System :: POSIX :: Linux",
     ],
     python_requires='>=2.7',
+    install_requires=["numpy", "posix_ipc"],
 )
