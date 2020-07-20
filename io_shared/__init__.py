@@ -258,7 +258,7 @@ class NumpyShare(object):
         self.size = size
         self.mode = mode
 
-        self._shm = RWSharedMMap(name, size)
+        self._shm = SharedMMap(name, size)
         self._sem = posix_ipc.Semaphore(name=name + '_np', initial_value=0, flags=posix_ipc.O_CREAT)
     
     def put(self, arr):
