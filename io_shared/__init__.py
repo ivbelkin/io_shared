@@ -263,7 +263,7 @@ class NumpyShare(object):
     
     def put(self, arr):
         if self.mode == 'put':
-            with self._shm.lock_write():
+            with self._shm.lock():
                 self._shm.seek(0)
                 np.save(self._shm, arr)
             if self._sem.value == 0:
@@ -274,7 +274,7 @@ class NumpyShare(object):
     def get(self):
         if self.mode == 'get':
             self._sem.acquire()
-            with self._shm.lock_read():
+            with self._shm.lock():
                 self._shm.seek(0)
                 return np.load(self._shm)
         elif self.mode == 'put':
