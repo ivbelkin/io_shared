@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="io_shared",
-    version="0.0.1",
+    version="0.0.3",
     author="Ilya Belkin",
     author_email="ilya.belkin-trade@yandex.ru",
     description="Read/write safe IPC via shared memory",
