@@ -1,11 +1,11 @@
 import setuptools
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
+with open("README.md", "rb") as fh:
+    long_description = fh.read().decode("utf-8")
 
 setuptools.setup(
     name="io_shared",
-    version="0.0.4",
+    version="0.0.5",
     author="Ilya Belkin",
     author_email="ilya.belkin-trade@yandex.ru",
     description="Read/write safe IPC via shared memory",
